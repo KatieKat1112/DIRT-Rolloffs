@@ -1,32 +1,30 @@
-// AUTO ANIMATE EVERYTHING
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
+// Fade-up animation on scroll
+const animatedElements = document.querySelectorAll('.animate');
+
+function animateOnScroll() {
+    animatedElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+        }
     });
-  },
-  { threshold: 0.15 }
-);
+}
 
-document.querySelectorAll(".animate").forEach(el => observer.observe(el));
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('load', animateOnScroll);
 
-// HEADER SHRINK
-const header = document.querySelector(".site-header");
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 60) header.classList.add("shrink");
-  else header.classList.remove("shrink");
-});
-
-// SCROLL TO TOP BUTTON
+// Back to top button
 const backToTop = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) backToTop.classList.add("show");
-  else backToTop.classList.remove("show");
+    if (window.scrollY > 400) {
+        backToTop.style.display = "block";
+    } else {
+        backToTop.style.display = "none";
+    }
 });
 
 backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 });
