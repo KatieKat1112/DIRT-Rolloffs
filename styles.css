@@ -207,3 +207,12 @@ nav a:hover {
     text-align: center;
   }
 }
+@media (max-width: 600px) {
+    .site-header {
+        padding-top: 25px; /* extra space so tab bar never overlaps */
+    }
+}
+body {
+    padding-bottom: 70px; /* space for tab bar */
+}
+
