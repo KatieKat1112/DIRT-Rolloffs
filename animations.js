@@ -1,12 +1,15 @@
-// Fade-up animation
+// ===============================
+// FADE-UP SCROLL ANIMATIONS
+// ===============================
+
 const animatedElements = document.querySelectorAll('.animate');
 
 function animateOnScroll() {
     animatedElements.forEach(el => {
         const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 50) {
-            el.style.opacity = "1";
-            el.style.transform = "translateY(0)";
+
+        if (rect.top < window.innerHeight - 80) {
+            el.classList.add("visible");
         }
     });
 }
@@ -14,8 +17,11 @@ function animateOnScroll() {
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
 
+// ===============================
 // MOBILE MENU TOGGLE
+// ===============================
+
 function toggleMenu() {
     const menu = document.getElementById("mobileMenu");
-    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    menu.classList.toggle("open");
 }
