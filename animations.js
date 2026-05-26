@@ -1,4 +1,4 @@
-// Fade-up animation on scroll
+// Fade-up animation
 const animatedElements = document.querySelectorAll('.animate');
 
 function animateOnScroll() {
@@ -14,17 +14,8 @@ function animateOnScroll() {
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
 
-// Back to top button
-const backToTop = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-        backToTop.style.display = "block";
-    } else {
-        backToTop.style.display = "none";
-    }
-});
-
-backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
+// MOBILE MENU TOGGLE
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}

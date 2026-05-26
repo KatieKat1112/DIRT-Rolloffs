@@ -1,6 +1,4 @@
-/* ------------------------------
-   RESET + BASE
------------------------------- */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -15,22 +13,14 @@ body {
   overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-  border-radius: 8px;
-}
-
+/* COLORS */
 :root {
   --yellow: #e6b800;
   --yellow-light: #ffcc00;
   --white: #ffffff;
-  --gray: #e5e5e5;
 }
 
-/* ------------------------------
-   NAVIGATION
------------------------------- */
+/* HEADER */
 .site-header {
   background: var(--white);
   padding: 15px 25px;
@@ -38,6 +28,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .nav-brand {
@@ -52,21 +43,62 @@ img {
   object-fit: contain;
 }
 
+/* DESKTOP NAV */
 nav a {
-  color: #000;
   margin-left: 20px;
   text-decoration: none;
+  color: #000;
   font-weight: bold;
-  transition: 0.2s;
 }
 
 nav a:hover {
   color: var(--yellow);
 }
 
-/* ------------------------------
-   HERO
------------------------------- */
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--white);
+  border-bottom: 3px solid var(--yellow);
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.mobile-menu a {
+  padding: 15px;
+  text-decoration: none;
+  color: #000;
+  border-top: 1px solid #ddd;
+  font-size: 1.1rem;
+}
+
+.mobile-menu a:hover {
+  background: var(--yellow);
+}
+
+/* MOBILE ONLY */
+@media (max-width: 800px) {
+  nav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* HERO */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -82,7 +114,7 @@ nav a:hover {
 
 .call-btn,
 .alt-call {
-  display: block;
+  display: inline-block;
   background: var(--yellow);
   color: #000;
   padding: 12px 20px;
@@ -90,8 +122,6 @@ nav a:hover {
   border-radius: 6px;
   font-weight: bold;
   text-decoration: none;
-  width: fit-content;
-  transition: 0.2s;
 }
 
 .call-btn:hover,
@@ -99,15 +129,18 @@ nav a:hover {
   background: var(--yellow-light);
 }
 
-/* ------------------------------
-   WHITE BOXES
------------------------------- */
+@media (max-width: 850px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* WHITE BOXES */
 .white-box,
 .service-card,
 .price-card,
 .faq-item,
-.hours-card,
-.service-area-grid div,
 .contact-info,
 .contact-form {
   background: var(--white);
@@ -116,9 +149,7 @@ nav a:hover {
   border-radius: 8px;
 }
 
-/* ------------------------------
-   SERVICES
------------------------------- */
+/* SERVICES GRID */
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -126,24 +157,22 @@ nav a:hover {
   padding: 25px;
 }
 
+.service-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
 .service-card h3 {
-  margin-top: 15px;
+  margin-top: 10px;
   color: var(--yellow);
 }
 
-/* ------------------------------
-   PRICING
------------------------------- */
-.pricing {
-  padding: 50px 25px;
-  text-align: center;
-}
-
+/* PRICING */
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
-  margin-top: 25px;
+  padding: 25px;
 }
 
 .price {
@@ -152,9 +181,7 @@ nav a:hover {
   color: var(--yellow);
 }
 
-/* ------------------------------
-   GALLERY
------------------------------- */
+/* GALLERY */
 .gallery-grid {
   padding: 30px;
   display: grid;
@@ -163,28 +190,97 @@ nav a:hover {
 }
 
 .gallery-img {
+  width: 100%;
+  border-radius: 8px;
   border: 3px solid var(--yellow);
   background: var(--white);
   padding: 8px;
+}
+
+/* ABOUT */
+.about-section {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+}
+
+.about-section img {
+  width: 100%;
   border-radius: 8px;
 }
 
-/* ------------------------------
-   FOOTER
------------------------------- */
+@media (max-width: 850px) {
+  .about-section {
+    flex-direction: column;
+  }
+}
+
+/* FAQ */
+.faq-section {
+  padding: 25px;
+  display: grid;
+  gap: 20px;
+}
+
+/* CONTACT */
+.contact-section {
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 2px solid var(--yellow);
+  border-radius: 6px;
+}
+
+.contact-form button {
+  background: var(--yellow);
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.contact-form button:hover {
+  background: var(--yellow-light);
+}
+
+@media (max-width: 850px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FOOTER */
 .site-footer {
   background: var(--white);
   padding: 40px 25px;
   border-top: 3px solid var(--yellow);
 }
 
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+}
+
 .footer-card h3 {
   color: var(--yellow);
 }
 
-/* ------------------------------
-   ANIMATIONS
------------------------------- */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ANIMATIONS */
 .animate {
   opacity: 0;
   transform: translateY(20px);
@@ -197,22 +293,48 @@ nav a:hover {
     transform: translateY(0);
   }
 }
-
-/* ------------------------------
-   RESPONSIVE
------------------------------- */
+/* Make hero image slightly bigger on mobile */
 @media (max-width: 850px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-@media (max-width: 600px) {
-    .site-header {
-        padding-top: 25px; /* extra space so tab bar never overlaps */
+    .hero-right img {
+        width: 80%;
+        max-width: 330px;
+        margin: 0 auto;
+        display: block;
     }
 }
-body {
-    padding-bottom: 70px; /* space for tab bar */
+/* Make hero image match other photo sizes */
+.hero-right img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 8px;
+    border: 3px solid var(--yellow);
+    background: var(--white);
+    padding: 8px;
+}
+/* Make homepage hero image match service section image size */
+.hero-right img {
+    width: 100%;
+    max-width: 350px; /* same visual size as service images */
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+/* Center hero text */
+.hero-left {
+    text-align: center;
+    width: 100%;
+}
+/* Stack hero image and text vertically */
+.hero {
+    flex-direction: column;
+    text-align: center;
+}
+/* Center Why Choose Us section */
+.why {
+    text-align: center;
+}
+
+.why-grid {
+    justify-content: center;
 }
 
