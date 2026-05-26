@@ -337,4 +337,27 @@ nav a:hover {
 .why-grid {
     justify-content: center;
 }
+/* Center the Our Services section */
+.services-preview {
+    text-align: center;
+}
+
+/* Center the Service Area section */
+.service-area {
+    text-align: center;
+}
+
+.service-area-grid {
+    justify-content: center;
+    text-align: center;
+}
+
+/* Center the Business Hours section */
+.hours {
+    text-align: center;
+}
+
+.hours-card {
+    margin: 0 auto;
+}
 
