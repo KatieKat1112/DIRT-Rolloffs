@@ -1,87 +1,90 @@
-// ===============================
-// TYPEWRITER FOR HEADER + NAV ONLY
-// ===============================
-
-function runTypewriter() {
-    // Only target header brand + nav links
-    const elements = document.querySelectorAll(
-        ".nav-brand .typewriter, nav a.typewriter, #mobileMenu a.typewriter"
-    );
-
-    elements.forEach((el) => {
-        const text = el.textContent.trim();
-        el.textContent = "";
-        let i = 0;
-
-        const interval = setInterval(() => {
-            el.textContent += text.charAt(i);
-            i++;
-
-            if (i === text.length) {
-                clearInterval(interval);
-            }
-        }, 40); // typing speed
-    });
-}
-
-window.addEventListener("load", runTypewriter);
-
-
-// ===============================
-// FADE-UP SCROLL ANIMATIONS
-// ===============================
-
-const animatedElements = document.querySelectorAll('.animate');
-
-function animateOnScroll() {
-    animatedElements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 80) {
-            el.classList.add("visible");
-        }
-    });
-}
-
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll);
-
-
-// ===============================
-// MOBILE MENU TOGGLE
-// ===============================
+// DIRT ROLLOFFS - Modern interactions
 
 function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.classList.toggle("open");
+  const menu = document.getElementById("mobileMenu");
+  if (!menu) return;
+  menu.classList.toggle("open");
 }
 
+// Close mobile menu when resizing back to desktop
+function initMobileMenuCloseOnResize() {
+  const menu = document.getElementById('mobileMenu');
+  if (!menu) return;
 
-// ===============================
-// SCROLL TO TOP BUTTON
-// ===============================
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 680) menu.classList.remove('open');
+  });
 
-const scrollBtn = document.getElementById("scrollTopBtn");
+  // Close when clicking outside (mobile)
+  document.addEventListener('click', (e) => {
+    if (!menu.classList.contains('open')) return;
 
-window.addEventListener("scroll", () => {
-    if (!scrollBtn) return;
-    scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    const header = menu.closest('.site-header');
+    if (!header) return;
+
+    if (!header.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initScrollReveal();
+  initScrollTop();
+  initMobileMenuCloseOnResize();
 });
 
-if (scrollBtn) {
-    scrollBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+
+function initScrollReveal() {
+  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const targets = document.querySelectorAll('[data-reveal], .animate');
+  if (!targets.length) return;
+
+  if (prefersReduced) {
+    targets.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      }
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
+  );
+
+  targets.forEach(el => io.observe(el));
 }
 
+function initScrollTop() {
+  const btn = document.getElementById('scrollTopBtn');
+  if (!btn) return;
 
-// ===============================
-// DARK MODE TOGGLE
-// ===============================
+  const onScroll = () => {
+    if (window.scrollY > 300) btn.classList.add('show');
+    else btn.classList.remove('show');
+  };
 
-const darkToggle = document.getElementById("darkToggle");
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
-if (darkToggle) {
-    darkToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-    });
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initScrollReveal();
+  initScrollTop();
+});
+
+// ORIGINAL MOBILE MENU
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
