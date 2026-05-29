@@ -1,90 +1,70 @@
-// DIRT ROLLOFFS - Modern interactions
+// TYPEWRITER
+document.addEventListener("DOMContentLoaded", () => {
+    const el = document.querySelector(".typewriter");
+    if (!el) return;
 
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  if (!menu) return;
-  menu.classList.toggle("open");
-}
+    const text = el.getAttribute("data-text");
+    let i = 0;
 
-// Close mobile menu when resizing back to desktop
-function initMobileMenuCloseOnResize() {
-  const menu = document.getElementById('mobileMenu');
-  if (!menu) return;
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 680) menu.classList.remove('open');
-  });
-
-  // Close when clicking outside (mobile)
-  document.addEventListener('click', (e) => {
-    if (!menu.classList.contains('open')) return;
-
-    const header = menu.closest('.site-header');
-    if (!header) return;
-
-    if (!header.contains(e.target)) {
-      menu.classList.remove('open');
-    }
-  });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  initScrollReveal();
-  initScrollTop();
-  initMobileMenuCloseOnResize();
-});
-
-
-function initScrollReveal() {
-  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const targets = document.querySelectorAll('[data-reveal], .animate');
-  if (!targets.length) return;
-
-  if (prefersReduced) {
-    targets.forEach(el => el.classList.add('is-visible'));
-    return;
-  }
-
-  const io = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
+    function type() {
+        if (i < text.length) {
+            el.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 80);
+        } else {
+            el.style.borderRight = "none";
         }
-      }
-    },
-    { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
-  );
+    }
 
-  targets.forEach(el => io.observe(el));
-}
-
-function initScrollTop() {
-  const btn = document.getElementById('scrollTopBtn');
-  if (!btn) return;
-
-  const onScroll = () => {
-    if (window.scrollY > 300) btn.classList.add('show');
-    else btn.classList.remove('show');
-  };
-
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  initScrollReveal();
-  initScrollTop();
+    type();
 });
 
-// ORIGINAL MOBILE MENU
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+// SCROLL REVEAL
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
+
+function reveal() {
+    const reveals = document.querySelectorAll(".reveal");
+
+    for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+            reveals[i].classList.add("active");
+        }
+    }
 }
+
+// DARK MODE TOGGLE
+const toggle = document.getElementById("darkToggle");
+if (toggle) {
+    toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    });
+}
+// CONTACT FORM SUCCESS MESSAGE
+const form = document.getElementById("contactForm");
+const successMsg = document.getElementById("formSuccess");
+
+if (form) {
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        successMsg.style.display = "block";
+        form.reset();
+
+        setTimeout(() => {
+            successMsg.style.display = "none";
+        }, 3000);
+    });
+}
+// FAQ ACCORDION
+const accHeaders = document.querySelectorAll(".accordion-header");
+
+accHeaders.forEach(header => {
+    header.addEventListener("click", () => {
+        const body = header.nextElementSibling;
+        body.style.display = body.style.display === "block" ? "none" : "block";
+    });
+});

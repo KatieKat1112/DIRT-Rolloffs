@@ -3,94 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us – DIRT ROLLOFFS</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contact | DIRT ROLLOFFS</title>
+    <link rel="stylesheet" href="styles.css?v=5">
     <script defer src="script.js"></script>
 </head>
 
 <body>
 
-<a href="tel:8459331925" id="floatCall">📞</a>
-<div id="scrollTopBtn">↑</div>
-<button id="darkToggle" class="dark-btn">🌙</button>
+<!-- FLOATING CALL BUTTON -->
+<a href="tel:8459331925" class="floating-call">📞 Call DIRT ROLLOFFS</a>
 
+<!-- HEADER -->
 <header class="site-header">
-    <div class="nav-brand animate">
-        <img src="images/logo.PNG" class="nav-logo">
-        <h2 class="typewriter">DIRT ROLLOFFS</h2>
+    <div class="header-left">
+        <img src="images/logo.PNG" class="nav-logo" alt="DIRT ROLLOFFS Logo">
+        <h2>DIRT ROLLOFFS</h2>
     </div>
 
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-
-    <div id="mobileMenu" class="mobile-menu">
-        <a href="index.html" class="typewriter">Home</a>
-        <a href="services.html" class="typewriter">Services</a>
-        <a href="gallery.html" class="typewriter">Gallery</a>
-        <a href="about.html" class="typewriter">About</a>
-        <a href="faq.html" class="typewriter">FAQ</a>
-        <a href="contact.html" class="typewriter">Contact</a>
-    </div>
-
-    <nav>
-        <a href="index.html" class="typewriter">Home</a>
-        <a href="services.html" class="typewriter">Services</a>
-        <a href="gallery.html" class="typewriter">Gallery</a>
-        <a href="about.html" class="typewriter">About</a>
-        <a href="faq.html" class="typewriter">FAQ</a>
-        <a href="contact.html" class="typewriter">Contact</a>
+    <nav class="header-right">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
     </nav>
+
+    <button class="dark-toggle" id="darkToggle">🌙</button>
 </header>
 
-<section class="page-header">
-    <h1 class="section-title">Contact Us</h1>
-    <p class="page-subtitle animate">We’re here to help with your project.</p>
-</section>
+<!-- CONTACT SECTION -->
+<section class="why reveal slide-up">
+    <h1>Contact Us</h1>
 
-<section class="contact-section">
-
-    <div class="contact-info white-box animate">
-        <h3>Call Us</h3>
+    <!-- CONTACT INFO BOX -->
+    <div class="text-box glow-border reveal slide-left">
+        <p><strong>Phone:</strong></p>
         <p>📞 845‑933‑1925</p>
         <p>📞 845‑933‑1035</p>
+
+        <p><strong>Email:</strong></p>
         <p>📧 Dirtrolloffs@gmail.com</p>
 
-        <h3>Business Hours</h3>
-        <p>Mon – Sun</p>
-        <p>6:00 am – 7:00 pm</p>
+        <p><strong>Service Area:</strong></p>
+        <p>Serving Ulster, Dutchess and Orange County</p>
     </div>
 
-    <form class="contact-form white-box animate">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Phone Number" required>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
+    <!-- CONTACT FORM -->
+    <form class="contact-form glow-border reveal slide-right" id="contactForm">
 
+        <div class="form-group">
+            <input type="text" required placeholder=" ">
+            <label>Your Name</label>
+        </div>
+
+        <div class="form-group">
+            <input type="email" required placeholder=" ">
+            <label>Your Email</label>
+        </div>
+
+        <div class="form-group">
+            <input type="tel" required placeholder=" ">
+            <label>Your Phone Number</label>
+        </div>
+
+        <div class="form-group">
+            <textarea required placeholder=" "></textarea>
+            <label>Your Message</label>
+        </div>
+
+        <button type="submit" class="call-btn pulse">Send Message</button>
+
+        <p class="form-success" id="formSuccess">Your message has been sent!</p>
+    </form>
 </section>
 
-<footer class="site-footer">
+<!-- FOOTER -->
+<footer class="site-footer reveal slide-up">
     <div class="footer-grid">
 
-        <div class="footer-card animate">
+        <div class="footer-card">
             <h3>DIRT ROLLOFFS</h3>
             <p>Dump It Right Today.</p>
         </div>
 
-        <div class="footer-card animate">
+        <div class="footer-card">
             <h3>Contact</h3>
             <p>📞 845‑933‑1925</p>
             <p>📞 845‑933‑1035</p>
             <p>📧 Dirtrolloffs@gmail.com</p>
         </div>
 
-        <div class="footer-card animate">
+        <div class="footer-card">
             <h3>Business Hours</h3>
             <p>Mon – Sun</p>
             <p>6:00 am – 7:00 pm</p>
         </div>
 
-        <div class="footer-card animate">
+        <div class="footer-card">
             <h3>Quick Links</h3>
             <a href="index.html">Home</a><br>
             <a href="services.html">Services</a><br>

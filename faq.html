@@ -3,109 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ – DIRT ROLLOFFS</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>FAQ | DIRT ROLLOFFS</title>
+    <link rel="stylesheet" href="styles.css?v=6">
     <script defer src="script.js"></script>
 </head>
 
 <body>
 
-<a href="tel:8459331925" id="floatCall">📞</a>
-<div id="scrollTopBtn">↑</div>
-<button id="darkToggle" class="dark-btn">🌙</button>
+<a href="tel:8459331925" class="floating-call">📞 Call DIRT ROLLOFFS</a>
 
 <header class="site-header">
-    <div class="nav-brand animate">
+    <div class="header-left">
         <img src="images/logo.PNG" class="nav-logo">
-        <h2 class="typewriter">DIRT ROLLOFFS</h2>
+        <h2>DIRT ROLLOFFS</h2>
     </div>
 
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-
-    <div id="mobileMenu" class="mobile-menu">
-        <a href="index.html" class="typewriter">Home</a>
-        <a href="services.html" class="typewriter">Services</a>
-        <a href="gallery.html" class="typewriter">Gallery</a>
-        <a href="about.html" class="typewriter">About</a>
-        <a href="faq.html" class="typewriter">FAQ</a>
-        <a href="contact.html" class="typewriter">Contact</a>
-    </div>
-
-    <nav>
-        <a href="index.html" class="typewriter">Home</a>
-        <a href="services.html" class="typewriter">Services</a>
-        <a href="gallery.html" class="typewriter">Gallery</a>
-        <a href="about.html" class="typewriter">About</a>
-        <a href="faq.html" class="typewriter">FAQ</a>
-        <a href="contact.html" class="typewriter">Contact</a>
+    <nav class="header-right">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
     </nav>
+
+    <button class="dark-toggle" id="darkToggle">🌙</button>
 </header>
 
-<section class="page-header">
-    <h1 class="section-title">Frequently Asked Questions</h1>
+<section class="why reveal slide-up">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="accordion">
+
+        <div class="accordion-item glow-border">
+            <button class="accordion-header">How long can I keep the dumpster?</button>
+            <div class="accordion-body">
+                <p>Standard rentals are 5–7 days, but we offer flexible scheduling.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item glow-border">
+            <button class="accordion-header">What items are not allowed?</button>
+            <div class="accordion-body">
+                <p>Hazardous materials, chemicals, paint, propane tanks, and flammable liquids.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item glow-border">
+            <button class="accordion-header">Do you offer same‑day delivery?</button>
+            <div class="accordion-body">
+                <p>Yes — depending on availability and location.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item glow-border">
+            <button class="accordion-header">Do you service my area?</button>
+            <div class="accordion-body">
+                <p>We proudly serve Ulster, Dutchess, and Orange County.</p>
+            </div>
+        </div>
+
+    </div>
 </section>
 
-<section class="faq-section">
-
-    <div class="faq-item white-box animate">
-        <h3>What can I put in the dumpster?</h3>
-        <p>Construction debris, household junk, furniture, yard waste, and more. No hazardous materials.</p>
-    </div>
-
-    <div class="faq-item white-box animate">
-        <h3>Do you offer same-day delivery?</h3>
-        <p>Yes — depending on availability. Calling early gives you the best chance.</p>
-    </div>
-
-    <div class="faq-item white-box animate">
-        <h3>What areas do you serve?</h3>
-        <p>Highland, New Paltz, Poughkeepsie, Marlboro, Milton, and surrounding Hudson Valley areas.</p>
-    </div>
-
-    <div class="faq-item white-box animate">
-        <h3>How long can I keep the dumpster?</h3>
-        <p>Standard rental is 7 days, but extensions are available upon request.</p>
-    </div>
-
-    <div class="faq-item white-box animate">
-        <h3>Do you help load the dumpster?</h3>
-        <p>Yes — our cleanout service includes full loading and removal.</p>
-    </div>
-
-</section>
-
-<footer class="site-footer">
-    <div class="footer-grid">
-
-        <div class="footer-card animate">
-            <h3>DIRT ROLLOFFS</h3>
-            <p>Dump It Right Today.</p>
-        </div>
-
-        <div class="footer-card animate">
-            <h3>Contact</h3>
-            <p>📞 845‑933‑1925</p>
-            <p>📞 845‑933‑1035</p>
-        </div>
-
-        <div class="footer-card animate">
-            <h3>Business Hours</h3>
-            <p>Mon – Sun</p>
-            <p>6:00 am – 7:00 pm</p>
-        </div>
-
-        <div class="footer-card animate">
-            <h3>Quick Links</h3>
-            <a href="index.html">Home</a><br>
-            <a href="services.html">Services</a><br>
-            <a href="gallery.html">Gallery</a><br>
-            <a href="about.html">About</a><br>
-            <a href="faq.html">FAQ</a><br>
-            <a href="contact.html">Contact</a>
-        </div>
-
-    </div>
-
+<footer class="site-footer reveal slide-up">
     <p class="footer-bottom">© DIRT ROLLOFFS. All Rights Reserved.</p>
 </footer>
 
