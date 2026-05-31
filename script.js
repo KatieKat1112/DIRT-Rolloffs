@@ -36,7 +36,7 @@ function reveal() {
     }
 }
 
-// DARK MODE TOGGLE
+// DARK MODE
 const toggle = document.getElementById("darkToggle");
 if (toggle) {
     toggle.addEventListener("click", () => {
@@ -44,48 +44,37 @@ if (toggle) {
         toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
     });
 }
-// CONTACT FORM SUCCESS MESSAGE
-const form = document.getElementById("contactForm");
-const successMsg = document.getElementById("formSuccess");
 
-if (form) {
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        successMsg.style.display = "block";
-        form.reset();
+// MOBILE MENU
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.querySelector(".header-right");
 
-        setTimeout(() => {
-            successMsg.style.display = "none";
-        }, 3000);
+if (hamburger && navMenu) {
+    hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
     });
 }
-// FAQ ACCORDION
-const accHeaders = document.querySelectorAll(".accordion-header");
 
-accHeaders.forEach(header => {
-    header.addEventListener("click", () => {
-        const body = header.nextElementSibling;
-        body.style.display = body.style.display === "block" ? "none" : "block";
-    });
-});
-// LIGHTBOX
+// LIGHTBOX (Gallery)
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const closeLightbox = document.querySelector(".close-lightbox");
 
-document.querySelectorAll(".gallery-img").forEach(img => {
-    img.addEventListener("click", () => {
-        lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
+if (lightbox && lightboxImg && closeLightbox) {
+    document.querySelectorAll(".gallery-img").forEach(img => {
+        img.addEventListener("click", () => {
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
+        });
     });
-});
 
-closeLightbox.addEventListener("click", () => {
-    lightbox.style.display = "none";
-});
-
-lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
+    closeLightbox.addEventListener("click", () => {
         lightbox.style.display = "none";
-    }
-});
+    });
+
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    });
+}
