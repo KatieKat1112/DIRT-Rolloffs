@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | DIRT ROLLOFFS</title>
-    <link rel="stylesheet" href="styles.css?v=10">
+    <title>About Us – DIRT ROLLOFFS</title>
+    <link rel="stylesheet" href="styles.css?v=11">
     <script defer src="script.js"></script>
 </head>
 
@@ -12,13 +12,14 @@
 
 <a href="tel:8459331925" class="floating-call">📞 Call DIRT ROLLOFFS</a>
 
+<!-- HEADER -->
 <header class="site-header">
     <div class="header-left">
         <img src="images/logo.PNG" class="nav-logo">
         <h2>DIRT ROLLOFFS</h2>
     </div>
 
-    <nav class="header-right">
+    <nav class="header-right desktop-nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="gallery.html">Gallery</a>
@@ -27,30 +28,90 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <div class="hamburger" id="hamburger">☰</div>
-    <button class="dark-toggle" id="darkToggle">🌙</button>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </header>
 
-<section class="why reveal slide-left">
-    <h1>About Us</h1>
+<!-- MOBILE MENU -->
+<nav id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
 
+    <div class="mobile-dark-toggle">
+        <input type="checkbox" id="darkToggle" class="dark-toggle-checkbox">
+        <label for="darkToggle" class="dark-toggle-label">
+            <span class="dark-toggle-ball"></span>
+        </label>
+        <span class="dark-toggle-text">Dark Mode</span>
+    </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header reveal slide-up">
+    <h1>About DIRT ROLLOFFS</h1>
+    <p>Locally owned. Family operated. Built on reliability and trust.</p>
+</section>
+
+<!-- ABOUT CONTENT -->
+<section class="about-section reveal slide-left">
     <div class="text-box glow-border">
+        <h2>Who We Are</h2>
         <p>
-            DIRT Rolloffs is a locally owned and operated business serving Ulster, Dutchess, and Orange County.
-            We built our company on reliability, honesty, and strong customer service.
+            DIRT ROLLOFFS is a locally owned and operated business proudly serving Ulster, Dutchess, 
+            and Orange County. We built our company on the belief that customers deserve fast service, 
+            fair pricing, and honest communication — every single time.
         </p>
-
         <p>
-            Whether you're a homeowner, contractor, or property manager, we make cleanup and waste removal simple.
-            Our team is committed to fast scheduling, dependable service, and clear communication.
-        </p>
-
-        <p>
-            We continue to expand our services — including demolition and decking — to better serve our community.
+            Whether you're tackling a home cleanout, a renovation, demolition work, or a major project, 
+            we’re here to make the process easier with dependable dumpster rentals and hands‑on services.
         </p>
     </div>
 </section>
 
+<section class="about-section reveal slide-right">
+    <div class="text-box glow-border">
+        <h2>Our Mission</h2>
+        <p>
+            Our mission is simple: provide the cleanest dumpsters, the fastest delivery, and the most 
+            reliable service in the Hudson Valley. We treat every job — big or small — with the same 
+            level of care and professionalism.
+        </p>
+    </div>
+</section>
+
+<section class="about-section reveal slide-left">
+    <div class="text-box glow-border">
+        <h2>Why Customers Trust Us</h2>
+        <ul>
+            <li>Fast delivery & pickup</li>
+            <li>Clean, well‑maintained dumpsters</li>
+            <li>Friendly, reliable communication</li>
+            <li>Locally owned & operated</li>
+            <li>Fair pricing with no hidden fees</li>
+            <li>Flexible scheduling</li>
+        </ul>
+    </div>
+</section>
+
+<section class="about-section reveal slide-up">
+    <div class="text-box glow-border">
+        <h2>We’re Here to Help</h2>
+        <p>
+            Not sure what size dumpster you need? Have questions about a cleanout or demolition project? 
+            We’re always happy to help you choose the right service for your needs.
+        </p>
+        <a href="contact.html" class="call-btn pulse">Contact Us</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="site-footer reveal slide-up">
     <p class="footer-bottom">© DIRT ROLLOFFS. All Rights Reserved.</p>
 </footer>

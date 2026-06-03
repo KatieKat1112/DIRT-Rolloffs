@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | DIRT ROLLOFFS</title>
-    <link rel="stylesheet" href="styles.css?v=10">
+    <title>Services – DIRT ROLLOFFS</title>
+    <link rel="stylesheet" href="styles.css?v=12">
     <script defer src="script.js"></script>
 </head>
 
@@ -18,7 +18,7 @@
         <h2>DIRT ROLLOFFS</h2>
     </div>
 
-    <nav class="header-right">
+    <nav class="header-right desktop-nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="gallery.html">Gallery</a>
@@ -27,45 +27,61 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <div class="hamburger" id="hamburger">☰</div>
-    <button class="dark-toggle" id="darkToggle">🌙</button>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+    </div>
 </header>
 
-<section class="services reveal slide-up">
-    <h1>Our Services</h1>
+<nav id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
 
+    <div class="mobile-dark-toggle">
+        <input type="checkbox" id="darkToggle" class="dark-toggle-checkbox">
+        <label for="darkToggle" class="dark-toggle-label">
+            <span class="dark-toggle-ball"></span>
+        </label>
+        <span class="dark-toggle-text">Dark Mode</span>
+    </div>
+</nav>
+
+<section class="page-header reveal slide-up">
+    <h1>Our Services</h1>
+    <p>Fast, reliable, and affordable solutions for every project.</p>
+</section>
+
+<section class="services-page reveal slide-left">
     <div class="service-grid">
 
         <div class="service-card glow-border pop">
             <img src="images/dumpster2.jpeg">
             <h3>Dumpster Rentals</h3>
-            <p>Fast delivery, clean dumpsters, and flexible rental periods.</p>
-
-            <div class="pricing-box">
-                <p><strong>10 Yard:</strong> $450 — includes 1 ton</p>
-                <p><strong>15 Yard:</strong> $550 — includes 1.5 tons</p>
-                <p><strong>20 Yard:</strong> $650 — includes 2 tons</p>
-                <p><strong>25 Yard:</strong> $750 — includes 2.5 tons</p>
-                <p><em>$125 per extra ton</em></p>
-            </div>
+            <p><strong>10 Yard – $450</strong></p>
+            <p><strong>15 Yard – $500</strong></p>
+            <p><strong>20 Yard – $550</strong></p>
+            <p><strong>25 Yard – $600</strong></p>
         </div>
 
         <div class="service-card glow-border pop">
             <img src="images/cleanout-before.jpeg">
             <h3>Cleanouts</h3>
-            <p>Homes, estates, garages, basements, and more.</p>
+            <p>Starting at <strong>$300</strong></p>
         </div>
 
         <div class="service-card glow-border pop">
             <img src="images/demo1.jpeg">
             <h3>Demolition</h3>
-            <p>Interior tear-outs & small structure removal.</p>
+            <p>Starting at <strong>$500</strong></p>
         </div>
 
         <div class="service-card glow-border pop">
             <img src="images/deck1.jpeg">
             <h3>Decking</h3>
-            <p>New deck builds, repairs, and upgrades.</p>
+            <p><strong>Custom quotes available</strong></p>
         </div>
 
     </div>

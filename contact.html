@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | DIRT ROLLOFFS</title>
-    <link rel="stylesheet" href="styles.css?v=10">
+    <title>Contact – DIRT ROLLOFFS</title>
+    <link rel="stylesheet" href="styles.css?v=11">
     <script defer src="script.js"></script>
 </head>
 
@@ -12,13 +12,14 @@
 
 <a href="tel:8459331925" class="floating-call">📞 Call DIRT ROLLOFFS</a>
 
+<!-- HEADER -->
 <header class="site-header">
     <div class="header-left">
         <img src="images/logo.PNG" class="nav-logo">
         <h2>DIRT ROLLOFFS</h2>
     </div>
 
-    <nav class="header-right">
+    <nav class="header-right desktop-nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="gallery.html">Gallery</a>
@@ -27,14 +28,41 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <div class="hamburger" id="hamburger">☰</div>
-    <button class="dark-toggle" id="darkToggle">🌙</button>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </header>
 
-<section class="why reveal slide-up">
-    <h1>Contact Us</h1>
+<!-- MOBILE MENU -->
+<nav id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
 
-    <div class="text-box glow-border reveal slide-left">
+    <div class="mobile-dark-toggle">
+        <input type="checkbox" id="darkToggle" class="dark-toggle-checkbox">
+        <label for="darkToggle" class="dark-toggle-label">
+            <span class="dark-toggle-ball"></span>
+        </label>
+        <span class="dark-toggle-text">Dark Mode</span>
+    </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header reveal slide-up">
+    <h1>Contact Us</h1>
+    <p>Fast responses. Friendly service. We're here to help.</p>
+</section>
+
+<!-- CONTACT INFO -->
+<section class="contact-info reveal slide-left">
+    <div class="text-box glow-border">
+        <h2>Get in Touch</h2>
         <p><strong>Phone:</strong></p>
         <p>📞 845‑933‑1925</p>
         <p>📞 845‑933‑1035</p>
@@ -43,37 +71,35 @@
         <p>📧 Dirtrolloffs@gmail.com</p>
 
         <p><strong>Service Area:</strong></p>
-        <p>Serving Ulster, Dutchess and Orange County</p>
+        <p>Ulster, Dutchess, and Orange County</p>
     </div>
-
-    <form class="contact-form glow-border reveal slide-right" id="contactForm">
-
-        <div class="form-group">
-            <input type="text" required placeholder=" ">
-            <label>Your Name</label>
-        </div>
-
-        <div class="form-group">
-            <input type="email" required placeholder=" ">
-            <label>Your Email</label>
-        </div>
-
-        <div class="form-group">
-            <input type="tel" required placeholder=" ">
-            <label>Your Phone Number</label>
-        </div>
-
-        <div class="form-group">
-            <textarea required placeholder=" "></textarea>
-            <label>Your Message</label>
-        </div>
-
-        <button type="submit" class="call-btn pulse">Send Message</button>
-
-        <p class="form-success" id="formSuccess">Your message has been sent!</p>
-    </form>
 </section>
 
+<!-- CONTACT FORM -->
+<section class="contact-form-section reveal slide-right">
+    <div class="contact-form glow-border">
+        <h2>Send a Message</h2>
+
+        <form action="contact.php" method="POST">
+
+            <label>Name</label>
+            <input type="text" name="name" required>
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>Phone</label>
+            <input type="text" name="phone" required>
+
+            <label>Message</label>
+            <textarea name="message" required></textarea>
+
+            <button type="submit" class="call-btn pulse">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="site-footer reveal slide-up">
     <p class="footer-bottom">© DIRT ROLLOFFS. All Rights Reserved.</p>
 </footer>

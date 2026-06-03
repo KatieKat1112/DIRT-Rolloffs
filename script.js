@@ -78,3 +78,21 @@ if (lightbox && lightboxImg && closeLightbox) {
         }
     });
 }
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+
+// Dark Mode Toggle
+const darkToggle = document.getElementById("darkToggle");
+
+if (darkToggle) {
+    darkToggle.addEventListener("change", () => {
+        document.body.classList.toggle("dark-mode");
+    });
+}
+document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('active');
+    });
+});

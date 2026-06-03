@@ -442,4 +442,136 @@ body.dark .accordion-body {
   color: white;
   cursor: pointer;
 }
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    width: 30px;
+    margin-right: 15px;
+    z-index: 1000;
+}
+
+.hamburger div {
+    width: 100%;
+    height: 4px;
+    background: #333;
+    border-radius: 3px;
+}
+
+/* Mobile menu container */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    width: 220px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 999;
+}
+
+.mobile-menu a {
+    padding: 10px 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.mobile-menu a:hover {
+    color: #f1c40f;
+}
+
+/* Mobile Dark Mode Toggle */
+.mobile-dark-toggle {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Toggle Switch */
+.dark-toggle-checkbox {
+    display: none;
+}
+
+.dark-toggle-label {
+    width: 50px;
+    height: 26px;
+    background: #ccc;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dark-toggle-ball {
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.dark-toggle-checkbox:checked + .dark-toggle-label {
+    background: #222;
+}
+
+.dark-toggle-checkbox:checked + .dark-toggle-label .dark-toggle-ball {
+    transform: translateX(24px);
+}
+
+.dark-toggle-text {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Hide desktop nav on mobile */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 18px;
+    padding: 15px;
+    cursor: pointer;
+    color: inherit;
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 15px 15px;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 

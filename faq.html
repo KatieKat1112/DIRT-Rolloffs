@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | DIRT ROLLOFFS</title>
-    <link rel="stylesheet" href="styles.css?v=10">
+    <title>FAQ – DIRT ROLLOFFS</title>
+    <link rel="stylesheet" href="styles.css?v=12">
     <script defer src="script.js"></script>
 </head>
 
@@ -18,7 +18,7 @@
         <h2>DIRT ROLLOFFS</h2>
     </div>
 
-    <nav class="header-right">
+    <nav class="header-right desktop-nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="gallery.html">Gallery</a>
@@ -27,44 +27,77 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <div class="hamburger" id="hamburger">☰</div>
-    <button class="dark-toggle" id="darkToggle">🌙</button>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+    </div>
 </header>
 
-<section class="why reveal slide-up">
-    <h1>Frequently Asked Questions</h1>
+<nav id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
 
-    <div class="accordion">
-
-        <div class="accordion-item glow-border">
-            <button class="accordion-header">How long can I keep the dumpster?</button>
-            <div class="accordion-body">
-                <p>Standard rentals are 5–7 days, but we offer flexible scheduling.</p>
-            </div>
-        </div>
-
-        <div class="accordion-item glow-border">
-            <button class="accordion-header">What items are not allowed?</button>
-            <div class="accordion-body">
-                <p>Hazardous materials, chemicals, paint, propane tanks, and flammable liquids.</p>
-            </div>
-        </div>
-
-        <div class="accordion-item glow-border">
-            <button class="accordion-header">Do you offer same‑day delivery?</button>
-            <div class="accordion-body">
-                <p>Yes — depending on availability and location.</p>
-            </div>
-        </div>
-
-        <div class="accordion-item glow-border">
-            <button class="accordion-header">Do you service my area?</button>
-            <div class="accordion-body">
-                <p>We proudly serve Ulster, Dutchess, and Orange County.</p>
-            </div>
-        </div>
-
+    <div class="mobile-dark-toggle">
+        <input type="checkbox" id="darkToggle" class="dark-toggle-checkbox">
+        <label for="darkToggle" class="dark-toggle-label">
+            <span class="dark-toggle-ball"></span>
+        </label>
+        <span class="dark-toggle-text">Dark Mode</span>
     </div>
+</nav>
+
+<section class="page-header reveal slide-up">
+    <h1>Frequently Asked Questions</h1>
+    <p>Quick answers to the most common questions we receive.</p>
+</section>
+
+<section class="faq-section reveal slide-left">
+
+    <div class="faq-item glow-border">
+        <button class="faq-question">What areas do you serve?</button>
+        <div class="faq-answer">
+            <p>Ulster, Dutchess, and Orange County.</p>
+        </div>
+    </div>
+
+    <div class="faq-item glow-border">
+        <button class="faq-question">What size dumpsters do you offer?</button>
+        <div class="faq-answer">
+            <p>10–25 yard dumpsters.</p>
+        </div>
+    </div>
+
+    <div class="faq-item glow-border">
+        <button class="faq-question">How long can I keep the dumpster?</button>
+        <div class="faq-answer">
+            <p>Flexible rental periods available.</p>
+        </div>
+    </div>
+
+    <div class="faq-item glow-border">
+        <button class="faq-question">What items are not allowed?</button>
+        <div class="faq-answer">
+            <p>Hazardous materials such as chemicals, paint, propane tanks, and batteries.</p>
+        </div>
+    </div>
+
+    <div class="faq-item glow-border">
+        <button class="faq-question">Do you offer cleanouts?</button>
+        <div class="faq-answer">
+            <p>Yes — homes, estates, garages, basements, and more.</p>
+        </div>
+    </div>
+
+    <div class="faq-item glow-border">
+        <button class="faq-question">Do you offer demolition?</button>
+        <div class="faq-answer">
+            <p>Yes — interior tear-outs, sheds, and small structures.</p>
+        </div>
+    </div>
+
 </section>
 
 <footer class="site-footer reveal slide-up">

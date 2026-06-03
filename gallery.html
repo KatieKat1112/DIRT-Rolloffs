@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | DIRT ROLLOFFS</title>
-    <link rel="stylesheet" href="styles.css?v=8">
+    <title>Gallery – DIRT ROLLOFFS</title>
+    <link rel="stylesheet" href="styles.css?v=12">
     <script defer src="script.js"></script>
 </head>
 
@@ -18,7 +18,7 @@
         <h2>DIRT ROLLOFFS</h2>
     </div>
 
-    <nav class="header-right">
+    <nav class="header-right desktop-nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="gallery.html">Gallery</a>
@@ -27,62 +27,72 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <div class="hamburger" id="hamburger">☰</div>
-    <button class="dark-toggle" id="darkToggle">🌙</button>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+    </div>
 </header>
 
-<section class="services reveal slide-up">
-    <h1>Gallery</h1>
+<nav id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
 
-    <!-- CATEGORY: DUMPSTERS -->
-    <h2 class="gallery-title"></h2>
-    <div class="gallery-grid">
-        <img src="images/dumpster1.jpeg" class="gallery-img glow-border">
-        <img src="images/dumpster2.jpeg" class="gallery-img glow-border">
-        <img src="images/dumpster3.jpeg" class="gallery-img glow-border">
-        <img src="images/IMG_6905.jpeg" class="gallery-img glow-border">
-        <img src="images/IMG_7439.jpeg" class="gallery-img glow-border">
+    <div class="mobile-dark-toggle">
+        <input type="checkbox" id="darkToggle" class="dark-toggle-checkbox">
+        <label for="darkToggle" class="dark-toggle-label">
+            <span class="dark-toggle-ball"></span>
+        </label>
+        <span class="dark-toggle-text">Dark Mode</span>
     </div>
+</nav>
 
-    <!-- CATEGORY: CLEANOUTS -->
-   
-    <div class="gallery-grid">
-        <img src="images/cleanout-before.jpeg" class="gallery-img glow-border">
-        <img src="images/cleanout-after.jpeg" class="gallery-img glow-border">
-        <img src="images/IMG_8289.jpeg" class="gallery-img glow-border">
-        <img src="images/IMG_8330.jpeg" class="gallery-img glow-border">
-    </div>
+<section class="page-header reveal slide-up">
+    <h1>Project Gallery</h1>
+    <p>A look at our dumpsters, cleanouts, demolition work, decking, and more.</p>
+</section>
 
-    <!-- CATEGORY: DEMOLITION -->
-    
+<section class="gallery-section reveal slide-left">
+    <h2>Dumpster Rentals</h2>
     <div class="gallery-grid">
-        <img src="images/demo1.jpeg" class="gallery-img glow-border">
-        <img src="images/IMG_8396.jpeg" class="gallery-img glow-border">
-    </div>
-
-    <!-- CATEGORY: DECKING -->
-    
-    <div class="gallery-grid">
-        <img src="images/deck1.jpeg" class="gallery-img glow-border">
-        <img src="images/deck2.jpeg" class="gallery-img glow-border">
-        <img src="images/IMG_9924.jpeg" class="gallery-img glow-border">
-        <img src="images/IMG_9925.jpeg" class="gallery-img glow-border">
-        <img src="images/IMG_9929.jpeg" class="gallery-img glow-border">
-    </div>
-
-    <!-- CATEGORY: EXTRA WORK -->
-  
-    <div class="gallery-grid">
-        <img src="images/IMG_8289.jpeg" class="gallery-img glow-border">
-        <img src="images/IMG_8330.jpeg" class="gallery-img glow-border">
+        <img src="images/dumpster1.jpeg" class="glow-border pop">
+        <img src="images/dumpster2.jpeg" class="glow-border pop">
+        <img src="images/dumpster3.jpeg" class="glow-border pop">
+        <img src="images/IMG_6905.jpeg" class="glow-border pop">
+        <img src="images/IMG_7439.jpeg" class="glow-border pop">
     </div>
 </section>
 
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox">
-    <span class="close-lightbox">&times;</span>
-    <img id="lightbox-img" src="">
-</div>
+<section class="gallery-section reveal slide-right">
+    <h2>Cleanouts</h2>
+    <div class="gallery-grid">
+        <img src="images/cleanout-before.jpeg" class="glow-border pop">
+        <img src="images/cleanout-after.jpeg" class="glow-border pop">
+        <img src="images/IMG_8289.jpeg" class="glow-border pop">
+        <img src="images/IMG_8330.jpeg" class="glow-border pop">
+    </div>
+</section>
+
+<section class="gallery-section reveal slide-left">
+    <h2>Demolition</h2>
+    <div class="gallery-grid">
+        <img src="images/demo1.jpeg" class="glow-border pop">
+        <img src="images/IMG_8396.jpeg" class="glow-border pop">
+    </div>
+</section>
+
+<section class="gallery-section reveal slide-right">
+    <h2>Decking</h2>
+    <div class="gallery-grid">
+        <img src="images/deck1.jpeg" class="glow-border pop">
+        <img src="images/deck2.jpeg" class="glow-border pop">
+        <img src="images/IMG_9924.jpeg" class="glow-border pop">
+        <img src="images/IMG_9925.jpeg" class="glow-border pop">
+        <img src="images/IMG_9929.jpeg" class="glow-border pop">
+    </div>
+</section>
 
 <footer class="site-footer reveal slide-up">
     <p class="footer-bottom">© DIRT ROLLOFFS. All Rights Reserved.</p>

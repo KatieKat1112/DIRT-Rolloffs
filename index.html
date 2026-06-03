@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIRT ROLLOFFS – Dump It Right Today</title>
-    <link rel="stylesheet" href="styles.css?v=10">
+    <link rel="stylesheet" href="styles.css?v=11">
     <script defer src="script.js"></script>
 </head>
 
 <body>
 
+<!-- Floating Call Button -->
 <a href="tel:8459331925" class="floating-call">📞 Call DIRT ROLLOFFS</a>
 
+<!-- HEADER -->
 <header class="site-header">
     <div class="header-left">
         <img src="images/logo.PNG" class="nav-logo">
         <h2>DIRT ROLLOFFS</h2>
     </div>
 
-    <nav class="header-right">
+    <!-- Desktop Navigation -->
+    <nav class="header-right desktop-nav">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="gallery.html">Gallery</a>
@@ -27,10 +30,34 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <div class="hamburger" id="hamburger">☰</div>
-    <button class="dark-toggle" id="darkToggle">🌙</button>
+    <!-- Hamburger Icon (Mobile) -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </header>
 
+<!-- MOBILE MENU -->
+<nav id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+
+    <!-- Dark Mode Toggle (Mobile Only) -->
+    <div class="mobile-dark-toggle">
+        <input type="checkbox" id="darkToggle" class="dark-toggle-checkbox">
+        <label for="darkToggle" class="dark-toggle-label">
+            <span class="dark-toggle-ball"></span>
+        </label>
+        <span class="dark-toggle-text">Dark Mode</span>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
 <section class="hero reveal slide-up">
     <h1 class="typewriter" data-text="Dump It Right Today"></h1>
 
@@ -48,6 +75,7 @@
     <img src="images/dumpster1.jpeg" class="hero-img reveal slide-up">
 </section>
 
+<!-- WHY CHOOSE US -->
 <section class="why reveal slide-left">
     <h2>Why Choose Us</h2>
 
@@ -63,6 +91,7 @@
     </div>
 </section>
 
+<!-- SERVICES -->
 <section class="services reveal slide-right">
     <h2>Our Services</h2>
 
@@ -97,6 +126,7 @@
     <a href="services.html" class="call-btn pulse">View All Services</a>
 </section>
 
+<!-- SERVICE AREA -->
 <section class="service-area reveal slide-up">
     <h2>Service Area</h2>
     <div class="text-box glow-border">
@@ -104,6 +134,7 @@
     </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="site-footer reveal slide-up">
     <p class="footer-bottom">© DIRT ROLLOFFS. All Rights Reserved.</p>
 </footer>
